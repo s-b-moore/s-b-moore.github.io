@@ -1,0 +1,10 @@
+---
+title: Posts
+listing:
+    contents: posts
+    type: grid
+    sort: "date desc"
+    categories: true
+---
+
+This will most likely contain random posts about coding (mis)adventures.

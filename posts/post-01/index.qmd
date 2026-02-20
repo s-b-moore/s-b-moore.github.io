@@ -1,0 +1,43 @@
+---
+title: "Knitting issues with `papaja` and `glmmTMB`"
+description: "This definitely did not take me two days to fix."
+image: post-01-banner.png
+date: 01-07-2026
+date-format: DD/MM/YYYY
+categories: [R, Referencing, Bugs]
+---
+
+For context, I use the R package `papaja` for writing manuscripts and alongside it, Zotero to generate references with the help of Better BibTeX. If none of these things are familiar to you, I will leave links at the bottom (they're pretty awesome).
+
+# The issue
+Recently, I started to work on a manuscript detailing the project I am working on in my current Research Assistant role. Typically, I set up an R Project, create a new R Markdown file with the `papaja` package, modify the YAML, add whatever packages I know will be required, and knit the document to ensure everything is working as it should.
+
+In this case, I needed the `glmmTMB` package for running generalised linear mixed effects modelling. This initially led to an issue with version mismatches between `glmmTMB`, `TMB`, and `Matrix` which I won't go into detail about here (but see [here](https://glmmtmb.github.io/glmmTMB/index.html) if this is an issue you are running into).
+
+The other issue I ran into is that the document simply would not knit; when I had `library(glmmTMB)` included in my setup chunk, I got the following error:
+
+```{r}
+# Error in `s[[i]]`:
+# ! attempt to select more than one element in vectorIndex Backtrace:
+# x
+# 1. \-papaja::r_refs("r-references.bib")
+# 2. \-papaja::create_bib(...)
+# 3. \-base::sapply(...)
+# 4. \-base::lapply(X = X, FUN = FUN, ...)
+# 5. \-papaja (local) FUN(X[[i]], ...)
+# 6. +-cite[[bibtypes == pref_entry]]
+# 7. \-utils:::`[[.bibentry`(cite, bibtypes == pref_entry)
+```
+# The fix
+Unfortunately, I couldn't find any specific documentation regarding this error, but given the error message it clearly appeared to be something to do with referencing. After bouncing around GitHub, Stack Overflow, and various other sites to try and find a fix, I randomly stumbled across a post where someone mentioned they did a bit of poking around in package directories to fix a completely unrelated issue, so I figured it couldn't hurt to have a look.
+
+BINGO!
+
+ The `glmmTMB` package directory contained a 'CITATION' file (in addition to a 'DESCRIPTION' file), and having written an R package previously ([sdtt](https://github.com/s-b-moore/sdtt)), I knew referencing information for that package was pulled from the 'DESCRIPTION' file (maybe both files can coexist when other software is used, but I can't say for definite). In any case, I deleted the 'CITATION' file, tried knitting the document, and thankfully it worked. So it appears that having both 'CITATION' and 'DESCRIPTION' files causes `papaja` to throw an error when it comes to referencing.
+
+# Links
+[Better BibTeX](https://retorque.re/zotero-better-bibtex/)<br>
+[papaja (CRAN)](https://cran.r-project.org/web/packages/papaja/index.html)<br>
+[papaja (GitHub)](https://github.com/crsh/papaja)<br>
+[The R Project for Statistical Computing](https://www.r-project.org/)<br>
+[Zotero](https://www.zotero.org/)<br>

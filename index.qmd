@@ -1,0 +1,23 @@
+![](images/pic1.svg)
+
+# About me
+Currently, I am a Research Assistant within the Department of Psychology at Durham University. I completed my PhD in 2023 within the School of Psychology at Keele University, supervised by [Professor Jim Grange](https://www.keele.ac.uk/psychology/people/jimgrange/) and [Dr Sara Spotorno](https://www.durham.ac.uk/staff/sara-spotorno/).
+
+Prior to my current role, I held positions as a Statistician, Lecturer, and Teaching Fellow. My research interests include visual short-term memory, cognitive control, and auditory distraction. I also have interests in mathematical and computational modelling, Open Research, and programming (primarily R and Python).
+
+# Education
+
+**Doctor of Philosophy in Psychology**<br>
+Thesis: *Multidimensional resource allocation: The role of attentional control in the allocation of visual short-term memory resources*.<br>
+Supervisors: [Professor James A. Grange](https://www.keele.ac.uk/psychology/people/jimgrange/) & [Dr Sara Spotorno](https://www.durham.ac.uk/staff/sara-spotorno/)<br>
+School of Psychology, Keele University
+
+**Master of Science (by Research) in Psychology**<br>
+Thesis: *Investigating the maintenance of order information in manual-gestural serial recall: Effect of articulatory suppression and irrelevant sound*.<br>
+Supervisors: [Dr John E. Marsh](https://www.lancashire.ac.uk/academics/dr-john-everett-marsh), [Professor Linden Ball](https://www.lancashire.ac.uk/academics/professor-linden-ball), & [Dr Reyhan Furman](https://www.mpi.nl/people/furman-reyhan).<br>
+School of Psychology, University of Lancashire (formerly University of Central Lancashire)
+
+**Bachelor of Science (Honours) in Neuroscience**<br>
+Dissertation: *The effect and reliability of anodal transcranial direct current stimulation over the primary motor cortex on motor learning in the mirror drawing paradigm*.<br>
+Project supervisor: [Dr Oliver A. Kannape](https://www.hug.ch/en/neurocentre/vmc-team)<br>
+School of Psychology, University of Lancashire (formerly University of Central Lancashire)

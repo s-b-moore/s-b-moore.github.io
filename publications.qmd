@@ -1,0 +1,11 @@
+# 2025
+**Moore, S. B.** & Grange, J. A. (2025). The impact of dimension switching on visual short-term memory. *Quarterly Journal of Experimental Psychology*. OnlineFirst. [10.1177/17470218251404415](https://doi.org/10.1177/17470218251404415).
+
+# 2024
+Marsh, J. E., Marois, A., Hurlstone, M. J., Ball, L. J., **Moore, S. B.**, Vachon, F., Schlittmeier, S. J., Röer, J. P., Buchner, A., & Bell, R. (2024). Changing-state irrelevant speech disrupts visual-verbal but not visual-spatial serial recall. *Journal of Experimental Psychology: Learning, Memory, & Cognition, 50*(11), 1772--1790. [10.1037/xlm0001360](https://doi.org/10.1037/xlm0001360).
+
+# 2022
+Grange, J. A. & **Moore, S. B.** (2022). mixtur: An R package for designing, analysing, and modelling continuous report visual short-term memory studies. *Behavior Research Methods, 54*, 2071–2100. [10.3758/s13428-021-01688-1](https://doi.org/10.3758/s13428-021-01688-1)
+
+# 2021
+Röer, J. P., Bell, R., Saint-Aubin, J., Sonier, R-P., Marsh, J. E., **Moore, S. B.**, Kershaw, M. B. A., Ljung, R., & Arnström, S. (2021). A multilingual preregistered replication of the semantic mismatch effect on serial recall. *Journal of Experimental Psychology: Learning, Memory, & Cognition, 48*(7), 966–974. [10.1037/xlm0001066](https://doi.org/10.1037/xlm0001066)
