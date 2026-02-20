@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About me",
+    "section": "",
+    "text": "About me\nCurrently, I am a Research Assistant within the Department of Psychology at Durham University. I completed my PhD in 2023 within the School of Psychology at Keele University, supervised by Professor Jim Grange and Dr Sara Spotorno.\nPrior to my current role, I held positions as a Statistician, Lecturer, and Teaching Fellow. My research interests include visual short-term memory, cognitive control, and auditory distraction. I also have interests in mathematical and computational modelling, Open Research, and programming (primarily R and Python).\n\n\nEducation\nDoctor of Philosophy in Psychology Thesis: Multidimensional resource allocation: The role of attentional control in the allocation of visual short-term memory resources. Supervisors: Professor James A. Grange & Dr Sara Spotorno School of Psychology, Keele University\nMaster of Science (by Research) in Psychology Thesis: Investigating the maintenance of order information in manual-gestural serial recall: Effect of articulatory suppression and irrelevant sound. Supervisors: Dr John E. Marsh, Professor Linden Ball, & Dr Reyhan Furman. School of Psychology, University of Lancashire (formerly University of Central Lancashire)\nBachelor of Science (Honours) in Neuroscience Dissertation: The effect and reliability of anodal transcranial direct current stimulation over the primary motor cortex on motor learning in the mirror drawing paradigm. Project supervisor: Dr Oliver A. Kannape School of Psychology, University of Lancashire (formerly University of Central Lancashire)"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Posts",
+    "section": "",
+    "text": "This will most likely contain random posts about coding (mis)adventures.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKnitting issues with papaja and glmmTMB\n\n\n\nR\n\nReferencing\n\nBugs\n\n\n\nThis definitely did not take me two days to fix.\n\n\n\n\n\n\nJan 7, 2026\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-01/index.html",
+    "href": "posts/post-01/index.html",
+    "title": "Knitting issues with papaja and glmmTMB",
+    "section": "",
+    "text": "For context, I use the R package papaja for writing manuscripts and alongside it, Zotero to generate references with the help of Better BibTeX. If none of these things are familiar to you, I will leave links at the bottom (they’re pretty awesome).\n\nThe issue\nRecently, I started to work on a manuscript detailing the project I am working on in my current Research Assistant role. Typically, I set up an R Project, create a new R Markdown file with the papaja package, modify the YAML, add whatever packages I know will be required, and knit the document to ensure everything is working as it should.\nIn this case, I needed the glmmTMB package for running generalised linear mixed effects modelling. This initially led to an issue with version mismatches between glmmTMB, TMB, and Matrix which I won’t go into detail about here (but see here if this is an issue you are running into).\nThe other issue I ran into is that the document simply would not knit; when I had library(glmmTMB) included in my setup chunk, I got the following error:\n\n# Error in `s[[i]]`:\n# ! attempt to select more than one element in vectorIndex Backtrace:\n# x\n# 1. \\-papaja::r_refs(\"r-references.bib\")\n# 2. \\-papaja::create_bib(...)\n# 3. \\-base::sapply(...)\n# 4. \\-base::lapply(X = X, FUN = FUN, ...)\n# 5. \\-papaja (local) FUN(X[[i]], ...)\n# 6. +-cite[[bibtypes == pref_entry]]\n# 7. \\-utils:::`[[.bibentry`(cite, bibtypes == pref_entry)\n\n\n\nThe fix\nUnfortunately, I couldn’t find any specific documentation regarding this error, but given the error message it clearly appeared to be something to do with referencing. After bouncing around GitHub, Stack Overflow, and various other sites to try and find a fix, I randomly stumbled across a post where someone mentioned they did a bit of poking around in package directories to fix a completely unrelated issue, so I figured it couldn’t hurt to have a look.\nBINGO!\nThe glmmTMB package directory contained a ‘CITATION’ file (in addition to a ‘DESCRIPTION’ file), and having written an R package previously (sdtt), I knew referencing information for that package was pulled from the ‘DESCRIPTION’ file (maybe both files can coexist when other software is used, but I can’t say for definite). In any case, I deleted the ‘CITATION’ file, tried knitting the document, and thankfully it worked. So it appears that having both ‘CITATION’ and ‘DESCRIPTION’ files causes papaja to throw an error when it comes to referencing.\n\n\nLinks\nBetter BibTeX papaja (CRAN) papaja (GitHub) The R Project for Statistical Computing Zotero"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "2025",
+    "section": "",
+    "text": "2025\nMoore, S. B. & Grange, J. A. (2025). The impact of dimension switching on visual short-term memory. Quarterly Journal of Experimental Psychology. OnlineFirst. 10.1177/17470218251404415.\n\n\n2024\nMarsh, J. E., Marois, A., Hurlstone, M. J., Ball, L. J., Moore, S. B., Vachon, F., Schlittmeier, S. J., Röer, J. P., Buchner, A., & Bell, R. (2024). Changing-state irrelevant speech disrupts visual-verbal but not visual-spatial serial recall. Journal of Experimental Psychology: Learning, Memory, & Cognition, 50(11), 1772–1790. 10.1037/xlm0001360.\n\n\n2022\nGrange, J. A. & Moore, S. B. (2022). mixtur: An R package for designing, analysing, and modelling continuous report visual short-term memory studies. Behavior Research Methods, 54, 2071–2100. 10.3758/s13428-021-01688-1\n\n\n2021\nRöer, J. P., Bell, R., Saint-Aubin, J., Sonier, R-P., Marsh, J. E., Moore, S. B., Kershaw, M. B. A., Ljung, R., & Arnström, S. (2021). A multilingual preregistered replication of the semantic mismatch effect on serial recall. Journal of Experimental Psychology: Learning, Memory, & Cognition, 48(7), 966–974. 10.1037/xlm0001066"
+  }
+]
